@@ -49,14 +49,9 @@
             });
 
             function makeBMSTable(info, mark) {
-                function makeBMSTable(info, mark) {
-    var x = "";
-    var count = 0;
-    var obj = $("#table_int");
-
+                var obj = $("#table_int");
     obj.html("");
 
-    // ヘッダー
     obj.append(
         "<thead class='table-dark'>" +
         "<tr>" +
@@ -67,60 +62,55 @@
     var tbody = $("<tbody></tbody>");
     obj.append(tbody);
 
-    var obj_sep = null;
+    var currentLevel = "";
+    var count = 0;
+    var levelRow = null;
 
     for (var i = 0; i < info.length; i++) {
 
-        if (x != info[i].level) {
-            if (obj_sep != null) {
-                obj_sep.html("<td colspan='6'><b>" + mark + x + " (" + count + "譜面)</b></td>");
+        if (currentLevel !== info[i].level) {
+            if (levelRow) {
+                levelRow.html("<td colspan='6'><b>" + mark + currentLevel + " (" + count + "譜面)</b></td>");
             }
 
-            obj_sep = $("<tr class='table-dark' style='text-align:center'></tr>");
-            tbody.append(obj_sep);
-
+            currentLevel = info[i].level;
             count = 0;
-            x = info[i].level;
+
+            levelRow = $("<tr class='table-dark text-center'></tr>");
+            tbody.append(levelRow);
         }
 
-        var str = $("<tr></tr>");
+        var row = $("<tr></tr>");
 
-        // Level
-        str.append("<td width='5%'>" + mark + x + "</td>");
+        row.append("<td>" + mark + currentLevel + "</td>");
 
-        // Title
-        str.append(
-            "<td width='35%'>" +
-            "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" +
+        row.append(
+            "<td>" +
+            "<a href='https://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" +
             info[i].md5 +
             "' target='_blank'>" +
             info[i].title +
             "</a></td>"
         );
 
-        // Artist
-        str.append("<td width='20%'>" + info[i].artist + "</td>");
+        row.append("<td>" + (info[i].artist || "") + "</td>");
 
-        // 本体
-        str.append("<td width='10%'>" +
+        row.append("<td>" +
             (info[i]["本体"] ? "<a href='" + info[i]["本体"] + "' target='_blank'>本体</a>" : "") +
             "</td>");
 
-        // 差分
-        str.append("<td width='10%'>" +
+        row.append("<td>" +
             (info[i]["差分"] ? "<a href='" + info[i]["差分"] + "' target='_blank'>差分</a>" : "") +
             "</td>");
 
-        // Comment
-        str.append("<td width='20%'>" + (info[i].comment || "") + "</td>");
+        row.append("<td>" + (info[i].comment || "") + "</td>");
 
-        tbody.append(str);   // ← これが超重要
-
+        tbody.append(row);
         count++;
     }
 
-    if (obj_sep != null) {
-        obj_sep.html("<td colspan='6'><b>" + mark + x + " (" + count + "譜面)</b></td>");
+    if (levelRow) {
+        levelRow.html("<td colspan='6'><b>" + mark + currentLevel + " (" + count + "譜面)</b></td>");
     }
 }
 
