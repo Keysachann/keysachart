@@ -142,7 +142,7 @@
                     "<td>" +
                     (
                         info[i].sha256
-                            ? "<a href='https://mocha-repository.info/song/" +
+                            ? "<a href='https://mocha-repository.info/song.php?sha256=" +
                               info[i].sha256 +
                               "' target='_blank' rel='noopener noreferrer'>" +
                               (info[i].title || "") +
@@ -150,7 +150,7 @@
                             : (info[i].title || "")
                     ) +
                     "</td>"
-                );
+);
 
                 // Artist
                 row.append(
