@@ -3,6 +3,7 @@
 
 <head>
     <title>Keysa's_Chart_Table</title>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,17 +34,22 @@
     <div class="container">
 
         <div class="alert alert-success mb-3" role="alert">
-            <p>きーさ（Keysa）が公開したBMS作品や差分(sl0(☆11+)以上)を集めました。</p>
+            <p>きーさ（Keysa）が公開したBMS作品や差分を集めました。</p>
             <p>Ksl(n)=sl(n)、Kst(n)=st(n)、K?は査定困難。</p>
-            <p>2026年5月29日:LR2IRの閉鎖に伴い、曲名からMochaIRに接続できるように変更しました。</p>
+
             <hr>
-            <p class="mb-0">連絡先 X:@Keysa_Vtuber</p>
+
+            <p class="mb-0">
+                連絡先 X:@Keysa_Vtuber
+            </p>
         </div>
 
         <!-- 難易度表 -->
         <div class="table-responsive">
+
             <table class="table table-light table-striped table-hover" id="table_int">
             </table>
+
         </div>
 
     </div>
@@ -52,21 +58,33 @@
 
         $(document).ready(function () {
 
-            $.getJSON($("meta[name=bmstable]").attr("content"), function (header) {
+            $.getJSON(
+                $("meta[name=bmstable]").attr("content"),
 
-                $.getJSON(header.data_url, function (information) {
+                function (header) {
 
-                    makeBMSTable(information, header.symbol);
+                    $.getJSON(
+                        header.data_url,
 
-                }).fail(function () {
+                        function (information) {
 
-                    $("#table_int").html(
-                        "<tr><td>JSONの読み込みに失敗しました。</td></tr>"
-                    );
+                            makeBMSTable(
+                                information,
+                                header.symbol
+                            );
 
-                });
+                        }
 
-            });
+                    ).fail(function () {
+
+                        $("#table_int").html(
+                            "<tr><td>JSONの読み込みに失敗しました。</td></tr>"
+                        );
+
+                    });
+
+                }
+            );
 
         });
 
@@ -80,12 +98,15 @@
             obj.append(
                 "<thead class='table-dark'>" +
                 "<tr>" +
+
                 "<th>Level</th>" +
                 "<th>Title</th>" +
                 "<th>Artist</th>" +
                 "<th>本体</th>" +
                 "<th>差分</th>" +
                 "<th>Comment</th>" +
+                "<th>Viewer</th>" +
+
                 "</tr>" +
                 "</thead>"
             );
@@ -106,7 +127,7 @@
                     if (levelRow) {
 
                         levelRow.html(
-                            "<td colspan='6'><b>" +
+                            "<td colspan='7'><b>" +
                             mark +
                             currentLevel +
                             " (" +
@@ -117,6 +138,7 @@
                     }
 
                     currentLevel = info[i].level;
+
                     count = 0;
 
                     levelRow = $(
@@ -137,20 +159,22 @@
                     "</td>"
                 );
 
-                // Title (mochaIR sha256)
+                // Title (mochaIR)
                 row.append(
                     "<td>" +
                     (
                         info[i].sha256
+
                             ? "<a href='https://mocha-repository.info/song.php?sha256=" +
                               info[i].sha256 +
                               "' target='_blank' rel='noopener noreferrer'>" +
                               (info[i].title || "") +
                               "</a>"
+
                             : (info[i].title || "")
                     ) +
                     "</td>"
-);
+                );
 
                 // Artist
                 row.append(
@@ -164,9 +188,11 @@
                     "<td>" +
                     (
                         info[i]["本体"]
+
                             ? "<a href='" +
                               info[i]["本体"] +
                               "' target='_blank' rel='noopener noreferrer'>本体</a>"
+
                             : ""
                     ) +
                     "</td>"
@@ -177,9 +203,11 @@
                     "<td>" +
                     (
                         info[i]["差分"]
+
                             ? "<a href='" +
                               info[i]["差分"] +
                               "' target='_blank' rel='noopener noreferrer'>差分</a>"
+
                             : ""
                     ) +
                     "</td>"
@@ -192,6 +220,21 @@
                     "</td>"
                 );
 
+                // Viewer (BMS Score Viewer)
+                row.append(
+                    "<td>" +
+                    (
+                        info[i].md5
+
+                            ? "<a href='https://bms-score-viewer.pages.dev/view?md5=" +
+                              info[i].md5 +
+                              "' target='_blank' rel='noopener noreferrer'>🎹</a>"
+
+                            : ""
+                    ) +
+                    "</td>"
+                );
+
                 tbody.append(row);
 
                 count++;
@@ -201,7 +244,7 @@
             if (levelRow) {
 
                 levelRow.html(
-                    "<td colspan='6'><b>" +
+                    "<td colspan='7'><b>" +
                     mark +
                     currentLevel +
                     " (" +
