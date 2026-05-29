@@ -100,6 +100,7 @@
                 "<tr>" +
 
                 "<th>Level</th>" +
+                "<th>動画</th>" +
                 "<th>Title</th>" +
                 "<th>Artist</th>" +
                 "<th>本体</th>" +
@@ -127,7 +128,7 @@
                     if (levelRow) {
 
                         levelRow.html(
-                            "<td colspan='7'><b>" +
+                            "<td colspan='8'><b>" +
                             mark +
                             currentLevel +
                             " (" +
@@ -156,6 +157,21 @@
                     "<td>" +
                     mark +
                     currentLevel +
+                    "</td>"
+                );
+
+                // YouTube
+                row.append(
+                    "<td>" +
+                    (
+                        info[i].youtube
+
+                            ? "<a href='" +
+                              info[i].youtube +
+                              "' target='_blank' rel='noopener noreferrer'>▶</a>"
+
+                            : ""
+                    ) +
                     "</td>"
                 );
 
@@ -244,7 +260,7 @@
             if (levelRow) {
 
                 levelRow.html(
-                    "<td colspan='7'><b>" +
+                    "<td colspan='8'><b>" +
                     mark +
                     currentLevel +
                     " (" +
