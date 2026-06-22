@@ -33,10 +33,15 @@
 
     <div class="container">
 
+        <div class="mb-3">
+            <input type="text" id="searchBox" class="form-control"
+                placeholder="タイトル・アーティスト・コメント検索">
+        </div>
+
         <div class="alert alert-success mb-3" role="alert">
             <p>きーさ（Keysa）が制作したsl、stクラスの差分(同梱含む)を集めました。</p>
             <p>Ksl(n)=sl(n)、Kst(n)=st(n)、K?は査定困難。</p>
-            <p>2026年5月29日:LR2IRの閉鎖に伴い、曲名からMochaIRに接続できるように変更。その他レイアウト変更。</p>
+            <p>2026年6月22日:曲名からbmi-IR、☕からMochaIRに接続できるように変更。検索機能追加。</p>
 
             <hr>
 
@@ -288,6 +293,23 @@
         }
 
     </script>
+
+    $(document).on("keyup", "#searchBox", function () {
+
+        const value = $(this).val().toLowerCase();
+
+        $("#table_int tbody tr").each(function () {
+
+            const text = $(this).text().toLowerCase();
+
+            $(this).toggle(
+                !$(this).hasClass("table-dark") &&
+                text.indexOf(value) > -1
+            );
+
+        });
+
+    });
 
 </body>
 
