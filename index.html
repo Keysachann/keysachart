@@ -92,17 +92,15 @@
 
         function makeBMSTable(info, mark) {
             
-    // 難易度順に自動ソート
+    // 難易度順 → 文字種順 → TITLE順
     info.sort(function (a, b) {
 
-        function getSortKey(level) {
-            var str = String(level).toLowerCase().trim();
+        function getLevelKey(level) {
+            var str = String(level || "").toLowerCase().trim();
 
-            // sl?、st? は最後に配置
             if (str === "sl?") return 10000;
             if (str === "st?") return 10001;
 
-            // sl → st の順番
             var match = str.match(/^(sl|st)(\d+)$/);
 
             if (match) {
@@ -115,8 +113,36 @@
             return 20000;
         }
 
-        return getSortKey(a.level) - getSortKey(b.level);
+        // タイトルの先頭文字で分類
+        function getTitleType(title) {
+            var first = Array.from(String(title || "").trim())[0] || "";
+
+            if (!first) return 6;
+            if (/^[0-9]$/.test(first)) return 1;
+            if (/^[a-zA-Z]$/.test(first)) return 2;
+            if (/^[ぁ-ゖ]$/.test(first)) return 3;
+            if (/^[ァ-ヺー]$/.test(first)) return 4;
+            if (/^\p{Script=Han}$/u.test(first)) return 5;
+
+            // 記号・その他
+            return 0;
+        }
+
+        var levelDiff = getLevelKey(a.level) - getLevelKey(b.level);
+        if (levelDiff !== 0) return levelDiff;
+
+        var titleA = String(a.title || "").trim();
+        var titleB = String(b.title || "").trim();
+
+        var typeDiff = getTitleType(titleA) - getTitleType(titleB);
+        if (typeDiff !== 0) return typeDiff;
+
+        return titleA.localeCompare(titleB, "ja", {
+            numeric: true,
+            sensitivity: "base"
+        });
     });
+
 
 
             var obj = $("#table_int");
