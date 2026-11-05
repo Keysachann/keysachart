@@ -91,6 +91,33 @@
         });
 
         function makeBMSTable(info, mark) {
+            
+    // 難易度順に自動ソート
+    info.sort(function (a, b) {
+
+        function getSortKey(level) {
+            var str = String(level).toLowerCase().trim();
+
+            // sl?、st? は最後に配置
+            if (str === "sl?") return 10000;
+            if (str === "st?") return 10001;
+
+            // sl → st の順番
+            var match = str.match(/^(sl|st)(\d+)$/);
+
+            if (match) {
+                var type = match[1];
+                var num = parseInt(match[2], 10);
+
+                return (type === "sl" ? 0 : 1000) + num;
+            }
+
+            return 20000;
+        }
+
+        return getSortKey(a.level) - getSortKey(b.level);
+    });
+
 
             var obj = $("#table_int");
 
