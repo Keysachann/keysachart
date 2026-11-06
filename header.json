@@ -12,7 +12,7 @@
           "1797732838f52572d0be3f6a2feb75af",
           "c603a2739b26b50eedbd3ec7d6732b55"
         ],
-        "constraint": ["grade_random", "gauge_lr2"]
+        "constraint": ["grade_random", "gauge_lr2","ln"]
       },
       {
         "name": "Keysa段位認定 Ksl10",
