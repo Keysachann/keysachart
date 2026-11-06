@@ -22,7 +22,7 @@
           "e83dc700751e9b6755f3cc03783b320c",
           "4ffe9662bcc7f641062f07b01135e760"
         ],
-        "constraint": ["grade_random", "gauge_lr2"]
+        "constraint": ["grade_random", "gauge_lr2","ln"]
       }
     ]
   ]
