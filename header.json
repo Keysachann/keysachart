@@ -1,5 +1,29 @@
 {
   "name": "Keysa's_Chart_Table",
   "symbol": "K",
-  "data_url": "https://script.google.com/macros/s/AKfycbwfrNWwpgI3zvvlj2e5PRU4cYoa14C8eIMoe8KLxZ7J4Yi2SdaA45XZSlY28jWB64ZQ2w/exec"
+  "data_url": "https://script.google.com/macros/s/AKfycbwfrNWwpgI3zvvlj2e5PRU4cYoa14C8eIMoe8KLxZ7J4Yi2SdaA45XZSlY28jWB64ZQ2w/exec",
+  "course": [
+    [
+      {
+        "name": "Keysa段位認定 Ksl9",
+        "md5": [
+          "47d36f21f5f6d7f637b66ac73fa9e3b9",
+          "c00d116cc3e95a395eac90f3fc2a0680",
+          "1797732838f52572d0be3f6a2feb75af",
+          "c603a2739b26b50eedbd3ec7d6732b55"
+        ],
+        "constraint": ["grade_random", "gauge_lr2"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl10",
+        "md5": [
+          "88878586a4e1a5375cf651fceb3e11ab",
+          "8ab50a9387aa8b43aa9689b7610a2668",
+          "e83dc700751e9b6755f3cc03783b320c",
+          "4ffe9662bcc7f641062f07b01135e760"
+        ],
+        "constraint": ["grade_random", "gauge_lr2"]
+      }
+    ]
+  ]
 }
