@@ -5,6 +5,96 @@
   "course": [
     [
       {
+        "name": "Keysa段位認定 Ksl0",
+        "md5": [
+          "989e7032aad37f0b9ae3a42f4992be51",
+          "6b7413aa210b2ef8f7a6f343f0f2900c",
+          "4293aaab93087388867c696c3f473d79",
+          "a73c280e80dfcb3078130b3d0f86ed55"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl1",
+        "md5": [
+          "dc7cccc8be9161d725c0fd1a482f5723",
+          "7bb3010f4c861453238216fca1487e2a",
+          "75c77e35a6f41028325e240a5490c6fc",
+          "7e5096d93f29d425e776816aefc05dae"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl2",
+        "md5": [
+          "4cdbcb43e875bafd3e00ab287a122a90",
+          "bc86d801c4e93d431503f9dfe3499e84",
+          "a5bcfb406710e0e78492cca7690169df",
+          "56e51ddab8698dbe63ac9a73a46e9fb6"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl3",
+        "md5": [
+          "8c0619aad94cca524c70a14116a320a8",
+          "975a413c0f1c4185f9839a31b5e65109",
+          "d0837cc4ad9daba41ed7efcd590ca284",
+          "9a903700ed88f817bd84ab1456dfff3d"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl4",
+        "md5": [
+          "a6f9969c12497bed9719d2382e28680a",
+          "1134c21888ff49d085fb42e1dca43aa1",
+          "042c4a5eef0789d2f27f734da07c251c",
+          "852010c14d800af78a56aea5ced2414b"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl5",
+        "md5": [
+          "d0422400b776d8e33c19741eb08ce6f4",
+          "c5436133d61863281f1009cf5517aa20",
+          "d0d3f938390b2078e56f89ea2cfdd4de",
+          "8299f4951ee738fe1326375613597e54"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl6",
+        "md5": [
+          "410d24469e1561595e539d8b6b958ea2",
+          "96f3026ada70812ca00c4fbdbed6aa8e",
+          "3e5fdaa4415c898a086f7891c235d6ad",
+          "f4c12f4c5a82d56fb7d7574b5d1ea9bd"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl7",
+        "md5": [
+          "56719858b308cdcd81306b4937cca72f",
+          "0ebe2c51338f2ba0aeac3916f2d3a67b",
+          "7c117af7f29429d6beaabe01150099c4",
+          "a72ed9c541163e545886b096bf461115"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl8",
+        "md5": [
+          "a43f1b740d82ffa2de24a3b9237ceaa3",
+          "64b2c0d91bc98d73330bd1c75002366e",
+          "e329fe1c2528528e120bfed4e3ddfd7f",
+          "21d6dbd7af9580a676edd7accecf4899"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
         "name": "Keysa段位認定 Ksl9",
         "md5": [
           "47d36f21f5f6d7f637b66ac73fa9e3b9",
@@ -12,7 +102,7 @@
           "1797732838f52572d0be3f6a2feb75af",
           "c603a2739b26b50eedbd3ec7d6732b55"
         ],
-        "constraint": ["grade_random", "gauge_lr2","ln"]
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
       },
       {
         "name": "Keysa段位認定 Ksl10",
@@ -22,7 +112,37 @@
           "e83dc700751e9b6755f3cc03783b320c",
           "4ffe9662bcc7f641062f07b01135e760"
         ],
-        "constraint": ["grade_random", "gauge_lr2","ln"]
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl11",
+        "md5": [
+          "eb2146a0e3519db8ea09225892322ae0",
+          "04588b6061302d121eee2491a7c8ecd2",
+          "d44933636dabba12ffb7d9b1a6caad56",
+          "09b236d5a1bb3c0a2aee319352616d46"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Ksl12",
+        "md5": [
+          "5227f75da289e26eb2d6bccf94f4a30b",
+          "c6b33109d0c0d92ec55502bc60ff113a",
+          "87e769b33b8b0119baefaa0c6fdc31e0",
+          "70496702005657d9e0119ca78d400eb4"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
+      },
+      {
+        "name": "Keysa段位認定 Kst8",
+        "md5": [
+          "d8cd80e582f5009f58a409ac0c67cc2d",
+          "39f0bdcd76c09f37a7a9cc85ca0ffcba",
+          "c894255739865295f4fbf93156f3710a",
+          "84c5b42a7958da8572226470d90c2c34"
+        ],
+        "constraint": ["grade_random", "gauge_lr2", "ln"]
       }
     ]
   ]
